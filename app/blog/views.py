@@ -3,7 +3,14 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-  return render(request, 'blog/home.html')
+  context = {
+    'title': 'Home',
+    'blog': 'THIS BLOG IS ABOUT TO GO VIRAL'
+  }
+  return render(request, 'blog/home.html', context)
 
 def about(request):
-  return render(request, 'blog/about.html')
+  context = {
+    'title': 'About'
+  }
+  return render(request, 'blog/about.html', context)
