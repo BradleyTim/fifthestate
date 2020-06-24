@@ -12,6 +12,13 @@ def home(request):
   }
   return render(request, 'blog/home.html', context)
 
+def detail(request, pk):
+  context = {
+    'title': 'Detail',
+    'post': Post.objects.get(id=pk)
+  }
+  return render(request, 'blog/detail.html', context)
+
 def about(request):
   context = {
     'title': 'About'
