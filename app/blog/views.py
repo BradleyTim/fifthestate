@@ -1,11 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from .models import Post
 
 # Create your views here.
+def index(request):
+  return redirect('blog-home')
+
 def home(request):
   context = {
     'title': 'Home',
-    'blog': 'THIS BLOG IS ABOUT TO GO VIRAL'
+    'posts': Post.objects.all()
   }
   return render(request, 'blog/home.html', context)
 

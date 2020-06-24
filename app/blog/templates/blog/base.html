@@ -11,17 +11,14 @@
   {% endif %}
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css">
   <link rel="stylesheet" href="{% static 'blog/main.css' %}">
 </head>
 <body class="">
-  <header class="navbar navbar-dark bg-primary">
-    <nav class="container">
-      <span class="navbar-brand mb-0 h1">Navbar</span>
-    </nav>
-  </header>
-  <div class="container">
+  {% include 'blog/navbar.html' %}
+  <div class="blog-container-height">
     {% block content %}{% endblock %}
   </div>
+  {% include 'blog/footer.html' %}
 </body>
 </html>
