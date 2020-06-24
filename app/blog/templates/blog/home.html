@@ -5,7 +5,7 @@
   {% for post in posts %}
     <a class="border-top d-block mb-4 text-decoaration-none" href="{% url 'blog-detail' post.id %}">
       <div class="container">
-        <h3 class="mt-3 h4 font-weight-bolder">{{ post.title }}</h3>
+        <h3 class="mt-3 h4 font-weight-bolder text-capitalize">{{ post.title }}</h3>
         <span class="h6 text-muted">{{ post.date_posted|date:"F d, Y" }}</span>
       </div>
     </a>

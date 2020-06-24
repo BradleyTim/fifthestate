@@ -15,6 +15,10 @@ a, a:hover {
   text-decoration: none;
 }
 
+.f-size {
+  font-size: 1.05rem;
+}
+
 .navbar {
   padding: 1rem 0;
 }
