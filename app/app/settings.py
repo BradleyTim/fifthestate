@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'kgqm=-d984$0u1y71i*ism-l3#nk!y-wkdqud
 # DEBUG = True
 DEBUG = os.environ.get('DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fifthestate.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
