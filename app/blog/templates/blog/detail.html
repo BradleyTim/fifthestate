@@ -3,6 +3,11 @@
 {% block content %}
   <div class="container py-3 text-left">
     <h3 class="font-weight-bold text-capitalize">{{ post.title }}</h3>
+    <ul class="d-flex">
+      {% for tag in post.tags.all %}
+        <li class="pr-2 tag">#{{ tag.name }}</li>
+      {% endfor %}
+    </ul>
     <span class="text-muted font-weight-normal">{{ post.date_posted }}</span>
     <div class="pt-2 text-justify f-size">{{ post.content | safe }}</div>
   </div>

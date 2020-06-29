@@ -8,7 +8,7 @@ def index(request):
 def home(request):
   context = {
     'title': 'Home',
-    'posts': Post.objects.all()
+    'posts': Post.objects.order_by('date_posted')[::-1]
   }
   return render(request, 'blog/home.html', context)
 
