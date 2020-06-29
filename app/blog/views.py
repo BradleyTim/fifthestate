@@ -18,7 +18,7 @@ def home(request):
   #   }
   
   context = {
-    'title': 'Home',
+    'title': 'Posts',
     'posts': Post.objects.order_by('date_posted')[::-1]
   }
   return render(request, 'blog/home.html', context)
