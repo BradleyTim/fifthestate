@@ -6,6 +6,17 @@ def index(request):
   return redirect('blog-home')
 
 def home(request):
+  # if request.method == 'GET' and request.GET['tag']:
+  #   context = {
+  #     'title': request.GET['tag'],
+  #     'posts': Post.objects.filter(tags__name=request.GET['tag'])
+  #   }
+  # else:
+  #   context = {
+  #     'title': 'Home',
+  #     'posts': Post.objects.order_by('date_posted')[::-1]
+  #   }
+  
   context = {
     'title': 'Home',
     'posts': Post.objects.order_by('date_posted')[::-1]
@@ -18,6 +29,14 @@ def detail(request, pk):
     'post': Post.objects.get(id=pk)
   }
   return render(request, 'blog/detail.html', context)
+
+def get_by_tags(request):
+  if request.method == 'GET' and request.GET['tag']:
+    context = {
+      'title': request.GET['tag'],
+      'posts': Post.objects.filter(tags__name=request.GET['tag'])
+    }
+  return render(request, 'blog/home.html', context)
 
 def about(request):
   context = {
