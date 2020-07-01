@@ -12,7 +12,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css">
-  <link rel="stylesheet" href="{% static 'blog/main.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
 </head>
 <body class="">
   {% include 'blog/navbar.html' %}
@@ -20,5 +20,6 @@
     {% block content %}{% endblock %}
   </div>
   {% include 'blog/footer.html' %}
+  <script src="{% static 'blog/js/blog.js' %}"></script>
 </body>
 </html>
